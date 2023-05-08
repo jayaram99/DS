@@ -17,6 +17,18 @@ class sl:
         new_node=N(data)
         new_node.next= self.head
         self.head = new_node
+        
+    def insAtEnd(self,data):
+        if self.head == None:
+            new_node = N(data)
+            self.head = new_node
+        else:
+            new_node=N(data)
+            v = self.head
+            while v.next:
+                v=v.next
+            v.next=new_node
+        
 l=sl()
 l.head=N(10)
 obj1=N(20)
@@ -26,4 +38,7 @@ obj1.next=obj2
 l.display()
 print('')
 l.insAtBeg(9)
+l.display()
+print('')
+l.insAtEnd(40)
 l.display()
